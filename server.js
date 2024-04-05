@@ -20,6 +20,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.post("/bitrix", (req, res) => {
   console.log(req.body);
+  console.log(req.query);
+  console.log(req.params);
   return res.json("Success");
 });
 // catch 404 and forward to error handler
