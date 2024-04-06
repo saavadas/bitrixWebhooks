@@ -24,8 +24,8 @@ app.post("/bitrix", async (req, res) => {
     const response = await axios.post(
       // "https://ihouse.bitrix24.ru/rest/222/8sdi9a5ddmjokdvr/crm.deal.get.json",
       "https://b24-qmabnl.bitrix24.ru/rest/1/0wz3j6inen5i7fyi/crm.deal.get.json",
-      // { id: req.body.data.FIELDS.ID }
-      { id: req.body.id }
+      { id: req.body.data.FIELDS.ID }
+      // { id: req.body.id }
     );
     console.log(response.data.result);
     res.status(200).send("Data sent successfully");
