@@ -11,6 +11,7 @@ var app = express();
 
 app.listen(3500, () => console.log(`Server running on port 3500`));
 // view engine setup
+app.set("view engine", "jade");
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -24,7 +25,7 @@ app.post("/bitrix", async (req, res) => {
     const response = await axios.post(
       // "https://ihouse.bitrix24.ru/rest/222/8sdi9a5ddmjokdvr/crm.deal.get.json",
       "https://b24-qmabnl.bitrix24.ru/rest/1/0wz3j6inen5i7fyi/crm.deal.get.json",
-      { id: req.body.data.FIELDS.ID, select: "ID" }
+      { id: req.body.data.FIELDS.ID }
       // { id: req.body.id }
     );
     console.log(response.data.result);
